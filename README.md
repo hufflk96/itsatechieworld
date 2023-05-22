@@ -42,6 +42,7 @@ This application is deployed through heroku! You can view posts and visit links 
 ## Deployed Application
 You can view the live application
 [here](https://techieworld.herokuapp.com/)
+and https://hufflk96.github.io/itsatechieworld/
 
 ## Contact Me
 
