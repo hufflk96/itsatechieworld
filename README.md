@@ -18,7 +18,7 @@
 Clone the repository:
 
 ```sh
-
+https://github.com/hufflk96/itsatechieworld.git
 ```
 
 Install the required dependencies:
