@@ -1,7 +1,5 @@
 const router = require('express').Router();
 const { User, Post, Comment } = require('../models');
-
-// Render home page
 router.get('/', (req, res) => {
   Post.findAll({
     attributes: [
@@ -40,8 +38,6 @@ router.get('/', (req, res) => {
       res.status(500).json(err);
     });
 });
-
-// Render selected post page
 router.get('/post/:id', (req, res) => {
   Post.findOne({
     where: {
@@ -84,10 +80,6 @@ router.get('/post/:id', (req, res) => {
       res.status(500).json(err);
     });
 });
-
-
-
-// login
 router.get('/login', (req, res) => {
   if (req.session.logged_in) {
     console.log(req.session.user_id)
@@ -97,8 +89,6 @@ router.get('/login', (req, res) => {
 
   res.render('login');
 });
-
-// signup
 router.get('/signup', (req, res) => {
   if (req.session.logged_in) {
     res.redirect('/');
