@@ -1,7 +1,5 @@
 <div class="container-fluid">
 	<div class="row">
-
-		{{!-- user info --}}
 		<div class="col-md-4">
 			<h2>Profile</h2>
 			<div class="panel panel-default post">
@@ -10,12 +8,9 @@
 				{{> user-data }}
 			</div>
 		</div>
-		{{!-- posts --}}
 		<div class="col-md-4">
-			{{#if user.posts.length}}
 			<ul class="post-list">
 				<h2>Your Posts</h2>
-				{{#each user.posts as |post|}}
 				<li>
 					<div class="panel panel-info post">
 						<button type="button" class="close" id="edit-post" aria-hidden="true"><a
@@ -27,8 +22,6 @@
 			</ul>
 			{{/if}}
 		</div>
-
-		{{!-- new post form --}}
 		<div class="col-md-4">
 			<h2>Share A Post</h1>
 				<div class="well">
