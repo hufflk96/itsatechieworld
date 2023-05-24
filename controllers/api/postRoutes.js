@@ -2,7 +2,7 @@ const router = require('express').Router();
 const { Post, User, Comment } = require('../../models');
 const { withAuth } = require('../../utils/auth');
 
-// Get all posts
+// Anything and everything posts
 router.get('/', (req, res) => {
     Post.findAll({
         attributes: [
@@ -33,7 +33,6 @@ router.get('/', (req, res) => {
         res.status(500).json(err);
     });
 });
-// Create a post
 router.post('/', async (req, res) => {
     try {
         const newPost = await Post.create({
@@ -48,8 +47,6 @@ router.post('/', async (req, res) => {
         res.status(500).json(err);
     }
 })
-
-// Get post by ID
 router.get('/:id', async (req, res) => {
     try {
         const result = await Post.findByPk(req.params.id);
@@ -64,9 +61,6 @@ router.get('/:id', async (req, res) => {
         res.status(500).json(err);
     }
 })
-
-
-// Update post
 router.put('/:id', withAuth, async (req, res) => {
     try {
         const result = await Post.update(req.body, {
@@ -84,8 +78,6 @@ router.put('/:id', withAuth, async (req, res) => {
         res.status(500).json(err);
     }
 })
-
-// Delete post
 router.delete('/:id', withAuth, async (req, res) => {
     try {
         const result = await Post.destroy({
