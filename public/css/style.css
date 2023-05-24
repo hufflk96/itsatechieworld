@@ -2,20 +2,17 @@ ul {
     list-style-type: none;
 };
 
-
-/* comments */
-
 .detailBox {
     width:320px;
     border:1px solid #bbb;
     margin:50px;
 }
 .titleBox {
-    background-color:#fdfdfd;
+    background-color:white;
     padding:10px;
 }
 .titleBox label{
-  color:#444;
+  color:black;
   margin:0;
   display:inline-block;
 }
@@ -50,7 +47,7 @@ ul {
     margin:0;
 }
 .sub-text {
-    color:#aaa;
+    color:blue;
     font-family:verdana;
     font-size:11px;
 }
