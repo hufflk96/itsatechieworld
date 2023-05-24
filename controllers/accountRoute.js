@@ -1,9 +1,6 @@
 const router = require('express').Router();
 const { User, Post, Comment } = require('../models');
 const { withAuth } = require('../utils/auth');
-
-
-// render avatar selection
 router.get('/', withAuth, (req, res) => {
     User.findOne({
         attributes: { exclude: ['password'] },
@@ -25,8 +22,6 @@ router.get('/', withAuth, (req, res) => {
             res.status(500).json(err);
         })
 });
-
-// edit avatar from dashboard
 router.get('/dashboard/edit-avatar', withAuth, (req, res) => {
     User.findOne({
         attributes: { exclude: ['password'] },
@@ -48,8 +43,6 @@ router.get('/dashboard/edit-avatar', withAuth, (req, res) => {
             res.status(500).json(err);
         })
 });
-
-// render page to create bio
 router.get('/about', withAuth, (req, res) => {
     User.findOne({
         attributes: { exclude: ['password'] },
@@ -71,8 +64,6 @@ router.get('/about', withAuth, (req, res) => {
             res.status(500).json(err);
         })
 });
-
-// render bio edit
 router.get('/dashboard/edit-bio', withAuth, (req, res) => {
     User.findOne({
         attributes: { exclude: ['password'] },
@@ -94,8 +85,6 @@ router.get('/dashboard/edit-bio', withAuth, (req, res) => {
             res.status(500).json(err);
         })
 });
-
-// render dashboard?
 router.get('/dashboard', withAuth, (req, res) => {
     User.findOne({
         attributes: { exclude: ['password'] },
@@ -136,8 +125,6 @@ router.get('/dashboard', withAuth, (req, res) => {
             res.status(500).json(err);
         })
 });
-
-// Edit a post
 router.get('/dashboard/edit/:id', withAuth, (req, res) => {
   Post.findOne({
     where: {
