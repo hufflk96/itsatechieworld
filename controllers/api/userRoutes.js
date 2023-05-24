@@ -4,7 +4,7 @@ const session = require('express-session');
 const withAuth = require('../../utils/auth');
 const SequelizeStore = require('connect-session-sequelize')(session.Store);
 
-// User Login
+// Anything and everything Login
 router.post("/login", async (req, res) => {
     try {
         const userData = await User.findOne({ where: { username: req.body.username } });
@@ -34,8 +34,6 @@ router.post("/login", async (req, res) => {
         res.status(400).json(err);
     }
 });
-
-// Create a new user
 router.post('/', async (req, res) => {
     try {
         const userData = await User.create(req.body);
@@ -52,8 +50,6 @@ router.post('/', async (req, res) => {
         res.json(err)
     }
 });
-
-// Get user by ID
 router.get('/:id', (req, res) => {
     User.findOne({
       attributes: { exclude: ['password'] },
@@ -87,8 +83,6 @@ router.get('/:id', (req, res) => {
         res.status(500).json(err);
       });
   });
-
-// Get all users
 router.get('/', async (req, res) => {
     try {
         const result = await User.findAll({
@@ -105,8 +99,6 @@ router.get('/', async (req, res) => {
         res.status(500).json(err);
     }
 })
-
-// Update user
 router.put('/:id', async (req, res) => {
     try {
         const result = await User.update(req.body, {
@@ -124,8 +116,6 @@ router.put('/:id', async (req, res) => {
         res.status(500).json(err);
     }
 })
-
-// Delete user
 router.delete('/:id', async (req, res) => {
     try {
         const result = await User.destroy({
