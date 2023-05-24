@@ -1,13 +1,9 @@
 <div class="container">
     <div class="panel panel-info">
-        {{> post-info post }}
     </div>
 </div>
 <div class="container">
     <div class="well">
-        {{> comments post.comments}}
-
-        {{#if logged_in}}
         <form class="form-inline comment-form" role="form">
             <div class="form-group">
                 <textarea type="text" name="comment-body" rows="5" cols="150" placeholder="Your comment"></textarea>
@@ -16,8 +12,7 @@
                 <button class="btn btn-default" type="submit">Post</button>
             </div>
         </form>
-        {{/if}}
-    </div>
+        </div>
 </div>
 
 <script src="/js/comment.js"></script>
