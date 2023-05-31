@@ -3,16 +3,14 @@ const { User, Post, Comment } = require('../../models');
 const session = require('express-session');
 const withAuth = require('../../utils/auth');
 const SequelizeStore = require('connect-session-sequelize')(session.Store);
-
-// Anything and everything Login
 router.post("/login", async (req, res) => {
     try {
         const userData = await User.findOne({ where: { username: req.body.username } });
         if (!userData) {
-            console.log("Incorrect username or password, please try again.")
+            console.log("Incorrect username or password")
             res
                 .status(400)
-                .json({ message: "Incorrect username or password, please try again" });
+                .json({ message: "Incorrect username or password" });
             return;
         }
         const validPassword = await userData.checkPassword(req.body.password);
@@ -20,7 +18,7 @@ router.post("/login", async (req, res) => {
             console.log("Incorrect password");
             res
                 .status(400)
-                .json({ message: "Incorrect email or password, please try again" });
+                .json({ message: "Incorrect email or password" });
             return;
         }
         req.session.save(() => {
@@ -28,7 +26,7 @@ router.post("/login", async (req, res) => {
             req.session.logged_in = true;
             console.log(userData, `logged in: ${req.session.logged_in}`, `user_id: ${req.session.user_id}`)
 
-            res.json({ user: userData, message: "You are now logged in!" });
+            res.json({ user: userData, message: "Logged-In" });
         });
     } catch (err) {
         res.status(400).json(err);
@@ -42,7 +40,7 @@ router.post('/', async (req, res) => {
             req.session.logged_in = true;
             console.log(userData);
 
-            res.json({ user: userData, message: "You are now logged in!" });
+            res.json({ user: userData, message: "Logged-In" });
             
         });
     }
@@ -73,7 +71,7 @@ router.get('/:id', (req, res) => {
     })
       .then(dbUserData => {
         if (!dbUserData) {
-          res.status(404).json({ message: 'No user found with this id' });
+          res.status(404).json({ message: 'No user found' });
           return;
         }
         res.json(dbUserData);
@@ -138,8 +136,8 @@ router.delete('/:id', async (req, res) => {
 router.post('/logout', async (req, res) => {
     console.log(`${req.session.logged_in}`)
     req.session.destroy()
-    console.log("goodbye")
-    res.json({ message: "Logged out" })
+    console.log("Bye!")
+    res.json({ message: "Logged-Out" })
 })
 
 
