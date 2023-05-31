@@ -1,8 +1,6 @@
 const router = require('express').Router();
 const { Comment } = require('../../models');
 const { withAuth } = require('../../utils/auth')
-
-// everything and anything comments
 router.get('/', async (req, res) => {
     try {
         const result = await Comment.findAll();
