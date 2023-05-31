@@ -10,7 +10,7 @@ router.get('/', withAuth, (req, res) => {
     })
         .then(dbUserData => {
             if (!dbUserData) {
-                res.status(404).json({ message: 'No user found with this id' });
+                res.status(404).json({ message: 'No user found' });
                 return;
             }
             const user = dbUserData.get({ plain: true });
@@ -31,7 +31,7 @@ router.get('/dashboard/edit-avatar', withAuth, (req, res) => {
     })
         .then(dbUserData => {
             if (!dbUserData) {
-                res.status(404).json({ message: 'No user found with this id' });
+                res.status(404).json({ message: 'No user found' });
                 return;
             }
             const user = dbUserData.get({ plain: true });
@@ -52,7 +52,7 @@ router.get('/about', withAuth, (req, res) => {
     })
         .then(dbUserData => {
             if (!dbUserData) {
-                res.status(404).json({ message: 'No user found with this id' });
+                res.status(404).json({ message: 'No user found' });
                 return;
             }
             const user = dbUserData.get({ plain: true });
@@ -73,7 +73,7 @@ router.get('/dashboard/edit-bio', withAuth, (req, res) => {
     })
         .then(dbUserData => {
             if (!dbUserData) {
-                res.status(404).json({ message: 'No user found with this id' });
+                res.status(404).json({ message: 'No user found' });
                 return;
             }
             const user = dbUserData.get({ plain: true });
@@ -153,7 +153,7 @@ router.get('/dashboard/edit/:id', withAuth, (req, res) => {
   })
     .then(dbPostData => {
       if (!dbPostData) {
-        res.status(404).json({ message: 'No post found with this id' });
+        res.status(404).json({ message: 'No post found' });
         return;
       }
       const post = dbPostData.get({ plain: true });
