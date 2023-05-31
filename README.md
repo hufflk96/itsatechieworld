@@ -5,21 +5,15 @@ This application uses the Model-View-Controller to create a blogger website wher
 
 Clone the repository:
 
-```sh
 https://github.com/hufflk96/itsatechieworld.git
-```
 
 Install the required dependencies:
 
-```sh
 npm install
-```
 
 Run the project in your local browser:
 
-```sh
 npm start
-```
 
 ## Usage
 
