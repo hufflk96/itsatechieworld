@@ -1,5 +1,5 @@
 {
-  "name": "tech-blog",
+  "name": "its-a-techie-world",
   "version": "1.0.0",
   "description": "A CMS-style blog developed for UNC Chapel Hill's coding bootcamp to display mastery of the MVC paradigm and the utilization of handlebars.js as the templating language.",
   "main": "index.js",
@@ -9,14 +9,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/t-starkw/what-the-tech.git"
+    "url": "git+https://github.com/hufflk96/itsatechieworld.git"
   },
-  "author": "Tessa Starkweather",
-  "license": "ISC",
+  "author": "hufflk96",
+  "license": "No License",
   "bugs": {
-    "url": "https://github.com/t-starkw/what-the-tech/issues"
+    "url": "https://github.com/hufflk96/itsatechieworld/issues"
   },
-  "homepage": "https://github.com/t-starkw/what-the-tech#readme",
+  "homepage": "https://github.com/hufflk96/itsatechieworld/blob/main/README.md",
   "dependencies": {
     "bcrypt": "^5.1.0",
     "connect-session-sequelize": "^7.1.5",
